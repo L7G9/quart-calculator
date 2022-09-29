@@ -1,0 +1,46 @@
+from quart import Blueprint
+from quart import request
+from calculator_service.calculator import Calculator
+
+#class Calculator:
+ #   def add(self, a, b):
+  #      return a + b
+#
+ #   def subtract(self, a, b):
+  ##      return a - b
+#
+ #   def multiply(self, a, b):
+  #      return a * b
+
+   # def divide(self, a, b):
+    #    return a / b
+
+calculator = Calculator()
+
+add = Blueprint("add", __name__)
+@add.route("/add")
+def calculate_add():
+    a = int(request.args.get("a"))
+    b = int(request.args.get("b"))
+    return {"result": calculator.add(a, b)}
+
+subtract = Blueprint("subtract", __name__)
+@add.route("/subtract")
+def calculate_subtract():
+    a = int(request.args.get("a"))
+    b = int(request.args.get("b"))
+    return {"result": calculator.subtract(a, b)}
+
+multiply = Blueprint("multiply", __name__)
+@add.route("/multiply")
+def calculate_multiply():
+    a = int(request.args.get("a"))
+    b = int(request.args.get("b"))
+    return {"result": calculator.multiply(a, b)}
+
+divide = Blueprint("divide", __name__)
+@add.route("/divide")
+def calculate_divide():
+    a = int(request.args.get("a"))
+    b = int(request.args.get("b"))
+    return {"result": calculator.divide(a, b)}
