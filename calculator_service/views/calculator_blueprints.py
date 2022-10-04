@@ -31,3 +31,10 @@ def calculate_divide():
     a = int(request.args.get("a"))
     b = int(request.args.get("b"))
     return {"result": calculator.divide(a, b)}
+
+sum = Blueprint("sum", __name__)
+@add.route("/sum")
+async def calculate_sum():
+    json_data = await request.get_json()
+    list = json_data['list']
+    return {"result": calculator.sum(list)}
