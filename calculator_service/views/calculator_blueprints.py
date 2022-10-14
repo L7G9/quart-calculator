@@ -33,29 +33,29 @@ subtract = Blueprint("subtract", __name__)
 @add.route("/subtract")
 async def calculate_subtract():
     a, b = await get_a_and_b()
-    return {"result": calculator.subtract(a, b)}
+    return {RESULT_KEY: calculator.subtract(a, b)}
 
 multiply = Blueprint("multiply", __name__)
 @add.route("/multiply")
 async def calculate_multiply():
     a, b = await get_a_and_b()
-    return {"result": calculator.multiply(a, b)}
+    return {RESULT_KEY: calculator.multiply(a, b)}
 
 divide = Blueprint("divide", __name__)
 @add.route("/divide")
 async def calculate_divide():
     a, b = await get_a_and_b()
-    return {"result": calculator.divide(a, b)}
+    return {RESULT_KEY: calculator.divide(a, b)}
 
 sum = Blueprint("sum", __name__)
 @add.route("/sum")
 async def calculate_sum():
     list = await get_list()
-    return {"result": calculator.sum(list)}
+    return {RESULT_KEY: calculator.sum(list)}
 
 mean = Blueprint('mean', __name__)
 @add.route("/mean")
 async def calculate_mean():
     list = await get_list()
-    return {"result": calculator.mean(list)}
+    return {RESULT_KEY: calculator.mean(list)}
 
