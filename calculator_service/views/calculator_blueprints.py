@@ -50,6 +50,12 @@ async def calculate_divide():
 sum = Blueprint("sum", __name__)
 @add.route("/sum")
 async def calculate_sum():
-    json_data = await request.get_json()
     list = await get_list()
     return {"result": calculator.sum(list)}
+
+mean = Blueprint('mean', __name__)
+@add.route("/mean")
+async def calculate_mean():
+    list = await get_list()
+    return {"result": calculator.mean(list)}
+
