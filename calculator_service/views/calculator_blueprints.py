@@ -2,39 +2,54 @@ from quart import Blueprint
 from quart import request
 from calculator_service.calculator import Calculator
 
+PARAM_1_KEY = 'a'
+PARAM_2_KEY = 'b'
+LIST_KEY = 'list'
+RESULT_KEY = 'result'
+
+async def get_a_and_b():
+    json_data = await request.get_json()
+    if json_data != None:
+        a = json_data[PARAM_1_KEY]
+        b = json_data[PARAM_2_KEY]
+    else:
+        a = request.args.get(PARAM_1_KEY)
+        b = request.args.get(PARAM_2_KEY)
+    return int(a), int(b)
+
+async def get_list():
+    json_data = await request.get_json()
+    return json_data[LIST_KEY]
+
 calculator = Calculator()
 
 add = Blueprint("add", __name__)
 @add.route("/add")
-def calculate_add():
-    a = int(request.args.get("a"))
-    b = int(request.args.get("b"))
-    return {"result": calculator.add(a, b)}
+async def calculate_add():
+    a, b = await get_a_and_b()
+    return {RESULT_KEY: calculator.add(a, b)}
 
 subtract = Blueprint("subtract", __name__)
 @add.route("/subtract")
-def calculate_subtract():
-    a = int(request.args.get("a"))
-    b = int(request.args.get("b"))
+async def calculate_subtract():
+    a, b = await get_a_and_b()
     return {"result": calculator.subtract(a, b)}
 
 multiply = Blueprint("multiply", __name__)
 @add.route("/multiply")
-def calculate_multiply():
-    a = int(request.args.get("a"))
-    b = int(request.args.get("b"))
+async def calculate_multiply():
+    a, b = await get_a_and_b()
     return {"result": calculator.multiply(a, b)}
 
 divide = Blueprint("divide", __name__)
 @add.route("/divide")
-def calculate_divide():
-    a = int(request.args.get("a"))
-    b = int(request.args.get("b"))
+async def calculate_divide():
+    a, b = await get_a_and_b()
     return {"result": calculator.divide(a, b)}
 
 sum = Blueprint("sum", __name__)
 @add.route("/sum")
 async def calculate_sum():
     json_data = await request.get_json()
-    list = json_data['list']
+    list = await get_list()
     return {"result": calculator.sum(list)}
