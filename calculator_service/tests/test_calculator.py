@@ -1,10 +1,11 @@
 import unittest
 from calculator_service.calculator import Calculator
 
+
 class Test(unittest.TestCase):
     def setUp(self):
-       self.calculator = Calculator()
-       self.list = [4,5,1,2,3]
+        self.calculator = Calculator()
+        self.list = [4, 5, 1, 2, 3]
 
     def test_add(self):
         self.assertEqual(self.calculator.add(20, 10), 30)

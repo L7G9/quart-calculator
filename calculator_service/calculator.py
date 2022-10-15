@@ -22,4 +22,3 @@ class Calculator:
 
     def mode(self, list):
         return 0
-
