@@ -2,10 +2,10 @@ from quart import Blueprint
 from quart import request
 from calculator_service.calculator import Calculator
 
-PARAM_1_KEY = 'a'
-PARAM_2_KEY = 'b'
-LIST_KEY = 'list'
-RESULT_KEY = 'result'
+PARAM_1_KEY = "a"
+PARAM_2_KEY = "b"
+LIST_KEY = "list"
+RESULT_KEY = "result"
 
 
 async def get_a_and_b():
@@ -72,7 +72,7 @@ async def calculate_sum():
     return {RESULT_KEY: calculator.sum(list)}
 
 
-mean = Blueprint('mean', __name__)
+mean = Blueprint("mean", __name__)
 
 
 @add.route("/mean")
