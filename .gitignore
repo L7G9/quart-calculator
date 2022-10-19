@@ -4,3 +4,4 @@ venv/
 .tox/
 *.egg-info/
 MANIFEST
+.coverage
