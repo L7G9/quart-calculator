@@ -12,11 +12,11 @@ with open("requirements.txt") as f:
 
 
 setup(
-    name='Calculator service',
-    version='1.0',
-    description='REST API calculator using python and quart',
-    author='Luke Gregory',
-    author_email='lukewgregory@gmail.com',
+    name="Calculator service",
+    version="1.0",
+    description="REST API calculator using python and quart",
+    author="Luke Gregory",
+    author_email="lukewgregory@gmail.com",
     packages=find_packages(),
     zip_safe=False,
     include_package_data=True,
