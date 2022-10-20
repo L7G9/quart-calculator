@@ -10,7 +10,7 @@ class Calculator:
     subtract(a, b)
         Subtracts one number from another.
     multiply(a, b)
-        Multiplies two numbers togther.
+        Multiplies two numbers together.
     divide(a, b)
         Divides one number by another.
     sum(list)
@@ -18,11 +18,9 @@ class Calculator:
     mean(list)
         Finds the mean average of a list of numbers.
     median(list)
-        Not implemented yet.
+        Finds the median average of a list of numbers.
     mode(list)
-        Not implemented yet.
-    range(list)
-        Not implemented yet.
+        Finds the mode average of a list of numbers.
     """
 
     def add(self, a, b):
@@ -38,7 +36,7 @@ class Calculator:
         Returns
         -------
         int
-            The sum of a and b.
+            The sum of a and b (a + b).
         """
 
         return a + b
@@ -56,7 +54,7 @@ class Calculator:
         Returns
         -------
         int
-            The diference between a and b.
+            The diference between a and b (a - b).
         """
 
         return a - b
@@ -74,7 +72,7 @@ class Calculator:
         Returns
         -------
         int
-            The product of a and b.
+            The product of a and b (a * b).
         """
 
         return a * b
@@ -92,18 +90,18 @@ class Calculator:
         Returns
         -------
         int
-            The fraction of a over b.
+            The fraction of a over b (a / b).
         """
 
         return a / b
 
     def sum(self, list):
-        """Adds  two numbers togther.
+        """Adds all numbers togther in a list togther.
 
         Parameters
         ----------
         list : list
-             Numbers to be added together.
+             List of numbers.
 
         Returns
         -------
@@ -114,19 +112,62 @@ class Calculator:
         return sum(list)
 
     def mean(self, list):
+        """Calculates the mean of a list of numbers, adds them all togther then divides by the count of numbers.
+
+        Parameters
+        ----------
+        list : list
+             List of numbers.
+
+        Returns
+        -------
+        float
+            The mean of all the numbers in the list.
+        """
+
         return sum(list) / len(list)
 
     def median(self, list):
+        """Finds the median value of a list of numbers by sorting the list by magnitude and finding the middle number.  If there is an even number of numbers in the list the median will be the average of the middle two numbers.
+
+        Parameters
+        ----------
+        list : list
+             List of numbers.
+
+        Returns
+        -------
+        float
+            The median value of the list.
+        """
+
         sorted_list = sorted(list)
+
+        # If even number of numbers in list...
         if len(sorted_list) % 2 == 0:
+            # Add the two middle numbers togther and return average
             middle_index2 = int(len(sorted_list) / 2)
             middle_index1 = middle_index2 - 1
             return (sorted_list[middle_index1] + sorted_list[middle_index2]) / 2
         else:
+            # If odd number, return single middle number
             middle_index = int(((len(sorted_list) + 1) / 2) - 1)
             return sorted_list[middle_index]
 
     def mode(self, list):
+        """Finds the mode numbers of a list of numbers by searching for the numbers that occur most frequently.  If every number occurs only once there is no mode.
+
+        Parameters
+        ----------
+        list : list
+             List of numbers.
+
+        Returns
+        -------
+        list
+            A list of the zero or more numbers that occur most frequently.
+        """
+
         # Make dictionary with keys as each unique number from list
         # and values as how many times that number occurs in list.
         dict = {}
