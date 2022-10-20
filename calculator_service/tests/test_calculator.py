@@ -11,7 +11,6 @@ class Test(unittest.TestCase):
         self.single_mode_list = [5, 2, 3, 5, 4, 3, 5, 1, 2, 5]
         self.multiple_mode_list = [5, 4, 1, 5, 4, 5, 3, 2, 3, 6, 3, 1]
 
-
     def test_add(self):
         self.assertEqual(self.calculator.add(20, 10), 30)
 
