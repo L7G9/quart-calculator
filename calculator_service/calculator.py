@@ -24,7 +24,7 @@ class Calculator:
     """
 
     def add(self, a, b):
-        """Adds two numbers togther.
+        """Adds two numbers together.
 
         Parameters
         ----------
@@ -60,7 +60,7 @@ class Calculator:
         return a - b
 
     def multiply(self, a, b):
-        """Multiplies two numbers togther.
+        """Multiplies two numbers together.
 
         Parameters
         ----------
@@ -96,7 +96,7 @@ class Calculator:
         return a / b
 
     def sum(self, list):
-        """Adds all numbers togther in a list togther.
+        """Adds all numbers in a list together.
 
         Parameters
         ----------
@@ -114,11 +114,11 @@ class Calculator:
     def mean(self, list):
         """Calculates the mean of a list of numbers
 
-        Adds them all togther then divides by the count of numbers.
+        Adds them all together then divides by the count of numbers.
 
         Parameters
         ----------
-        list : list
+        list : list of int
              List of numbers.
 
         Returns
@@ -138,7 +138,7 @@ class Calculator:
 
         Parameters
         ----------
-        list : list
+        list : list of int
              List of numbers.
 
         Returns
@@ -168,12 +168,12 @@ class Calculator:
 
         Parameters
         ----------
-        list : list
+        list : list of int
              List of numbers.
 
         Returns
         -------
-        list
+        list of int
             A list of the zero or more numbers that occur most frequently.
         """
 
@@ -188,20 +188,20 @@ class Calculator:
 
         results = []
 
-        # Numbers with only one occurance can ever be the mode.
-        max_occurances = 2
+        # Numbers with only one occurrence can ever be the mode.
+        max_occurrences = 2
 
         for item in dict.items():
-            # If number has a higher number of occurances then current max.
-            if item[1] > max_occurances:
+            # If number has a higher number of occurrences then current max.
+            if item[1] > max_occurrences:
                 # There is one mode so far
-                #add key as only number in results and update max_occurances.
+                # add key as only number in results and update max_occurrences.
                 results = [item[0]]
-                max_occurances = item[1]
-            # If number has same number of occurances as current max.
-            elif item[1] == max_occurances:
+                max_occurrences = item[1]
+            # If number has same number of occurrences as current max.
+            elif item[1] == max_occurrences:
                 # There are more than one mode so far
-                #add key to other numbers in results.
+                # add key to other numbers in results.
                 results.append(item[0])
 
         return results
