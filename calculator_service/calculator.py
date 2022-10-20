@@ -112,7 +112,9 @@ class Calculator:
         return sum(list)
 
     def mean(self, list):
-        """Calculates the mean of a list of numbers, adds them all togther then divides by the count of numbers.
+        """Calculates the mean of a list of numbers
+
+        Adds them all togther then divides by the count of numbers.
 
         Parameters
         ----------
@@ -128,7 +130,11 @@ class Calculator:
         return sum(list) / len(list)
 
     def median(self, list):
-        """Finds the median value of a list of numbers by sorting the list by magnitude and finding the middle number.  If there is an even number of numbers in the list the median will be the average of the middle two numbers.
+        """Finds the median value of a list of numbers
+
+        Sorts the list by magnitude and finds the middle number.  If there is
+        an even number of numbers in the list the median will be the average
+        of the middle two numbers.
 
         Parameters
         ----------
@@ -155,7 +161,10 @@ class Calculator:
             return sorted_list[middle_index]
 
     def mode(self, list):
-        """Finds the mode numbers of a list of numbers by searching for the numbers that occur most frequently.  If every number occurs only once there is no mode.
+        """Finds the mode numbers of a list of numbers
+
+        Searches for the numbers that occur most frequently.  If every number
+        occurs only once there is no mode.
 
         Parameters
         ----------
@@ -185,12 +194,14 @@ class Calculator:
         for item in dict.items():
             # If number has a higher number of occurances then current max.
             if item[1] > max_occurances:
-                # There is one mode so far, add key as only number in results and update max_occurances.
+                # There is one mode so far
+                #add key as only number in results and update max_occurances.
                 results = [item[0]]
                 max_occurances = item[1]
             # If number has same number of occurances as current max.
             elif item[1] == max_occurances:
-                # There are more than one mode so far, add key to other numbers in results.
+                # There are more than one mode so far
+                #add key to other numbers in results.
                 results.append(item[0])
 
         return results
