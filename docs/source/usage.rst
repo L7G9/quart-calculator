@@ -2,7 +2,7 @@ usage
 =====
 
 Run Service
-------------
+-----------
 
 To run Quart Calculator:
 
