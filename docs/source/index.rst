@@ -1,20 +1,18 @@
-.. Quart Calculator documentation master file, created by
-   sphinx-quickstart on Fri Oct 21 08:12:35 2022.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
-
 Welcome to Quart Calculator's documentation!
 ============================================
 
+**Quart Calculator** is a REST service using Python and Quart that simulates a 
+simple calculator.  It has been created as a simple project to try out Python 
+software development tools including Pytest, Pytest-cov, Black, Flake8, Tox and 
+Sphinx.  
+
+.. note::
+
+	This project is under developement.
+
+Contents
+--------
+
 .. toctree::
-   :maxdepth: 2
-   :caption: Contents:
 
-
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+   usage
