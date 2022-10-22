@@ -32,6 +32,9 @@ add = Blueprint("add", __name__)
 
 @add.route("/add")
 async def calculate_add():
+    """Add view.
+    This view will return the the result of a + b as a JSON mapping.
+    """
     a, b = await get_a_and_b()
     return {RESULT_KEY: calculator.add(a, b)}
 
