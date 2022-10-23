@@ -17,7 +17,7 @@
     <script src="_static/sphinx_highlight.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="APIS" href="api.html" />
+    <link rel="next" title="Calculator Class" href="calculator.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -71,8 +71,17 @@ contains options for running the Quart app, like the DEBUG flag:</p>
 <span class="na">DEBUG</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">true</span><span class="w"></span>
 </pre></div>
 </div>
-<p>Blueprint are imported from <code class="xref py py-mod docutils literal notranslate"><span class="pre">myservice.views</span></code> and one
-Blueprint and view example was provided in <code class="file docutils literal notranslate"><span class="pre">calculator_service/views/calculator.py</span></code>:</p>
+<p>The buisiness logic for Calculator is provided in <code class="file docutils literal notranslate"><span class="pre">calculator_service/calculator.py</span></code>:</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="calculator.html">Calculator Class</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="calculator.html#calculator_service.calculator.Calculator"><code class="docutils literal notranslate"><span class="pre">Calculator</span></code></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<p>Blueprints are imported from <code class="xref py py-mod docutils literal notranslate"><span class="pre">myservice.views</span></code> and Blueprints
+and views are provided in <code class="file docutils literal notranslate"><span class="pre">calculator_service/views/calculator_blueprints.py</span></code>:</p>
 <div class="highlight-default notranslate" id="calculator-blueprints-py"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">quart</span> <span class="kn">import</span> <span class="n">Blueprint</span>
 <span class="kn">from</span> <span class="nn">quart</span> <span class="kn">import</span> <span class="n">request</span>
 <span class="kn">from</span> <span class="nn">calculator_service.calculator</span> <span class="kn">import</span> <span class="n">Calculator</span>
@@ -107,6 +116,9 @@ Blueprint and view example was provided in <code class="file docutils literal no
 
 <span class="nd">@add</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s2">&quot;/add&quot;</span><span class="p">)</span>
 <span class="k">async</span> <span class="k">def</span> <span class="nf">calculate_add</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Add view.</span>
+<span class="sd">    This view will return the the result of a + b as a JSON mapping.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="k">await</span> <span class="n">get_a_and_b</span><span class="p">()</span>
     <span class="k">return</span> <span class="p">{</span><span class="n">RESULT_KEY</span><span class="p">:</span> <span class="n">calculator</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)}</span>
 
@@ -194,6 +206,9 @@ in that case they will be converted into a JSON response.</p>
 
 <h3>Navigation</h3>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="calculator.html">Calculator Class</a></li>
+</ul>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="api.html">APIS</a></li>
 </ul>
 
@@ -201,7 +216,7 @@ in that case they will be converted into a JSON response.</p>
 <h3>Related Topics</h3>
 <ul>
   <li><a href="#">Documentation overview</a><ul>
-      <li>Next: <a href="api.html" title="next chapter">APIS</a></li>
+      <li>Next: <a href="calculator.html" title="next chapter">Calculator Class</a></li>
   </ul></li>
 </ul>
 </div>

@@ -15,8 +15,16 @@ contains options for running the Quart app, like the DEBUG flag:
    :language: ini
 
 
-Blueprint are imported from :mod:`myservice.views` and one
-Blueprint and view example was provided in :file:`calculator_service/views/calculator.py`:
+The buisiness logic for Calculator is provided in :file:`calculator_service/calculator.py`:
+
+.. toctree::
+   :maxdepth: 2
+
+   calculator
+
+
+Blueprints are imported from :mod:`myservice.views` and Blueprints
+and views are provided in :file:`calculator_service/views/calculator_blueprints.py`:
 
 .. literalinclude:: ../../calculator_service/views/calculator_blueprints.py
    :name: calculator_blueprints.py
