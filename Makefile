@@ -6,8 +6,6 @@ PYTHON = $(BIN)/python
 
 INSTALL = $(BIN)/pip install --no-deps
 
-.PHONY: all test docs build_extras
-
 all: build
 
 $(PYTHON):
@@ -15,16 +13,6 @@ $(PYTHON):
 
 build: $(PYTHON)
 	$(PYTHON) setup.py develop
-
-clean:
-	rm -rf $(VENV)
-
-test_dependencies:
-	$(BIN)/pip install flake8 tox
-
-test: build test_dependencies
-	$(BIN)/flake8 myservice
-	$(BIN)/tox
 
 run:
 	QUART_APP=calculator_service bin/quart run
